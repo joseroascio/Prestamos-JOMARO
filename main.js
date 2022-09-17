@@ -75,7 +75,7 @@ const simularPrestamo = () => {
   )
   console.debug(usuario);
 
-  const monto = document.getElementById("input-monto").value;
+  const monto = parseInt(document.getElementById("input-monto").value);
   const cuotas = document.getElementById("input-cuotas").value;
 
   const prestamo = new Prestamo( 
@@ -87,7 +87,7 @@ const simularPrestamo = () => {
   if (clienteEstaPermitido) {
     const valorCuota = calcularCuota(monto, cuotas);
     const tasaInteres = calcularInteres(monto, cuotas);
-    const totalidadCobrar = calculoMontoFinal(monto, tasaInteres);
+    const totalidadCobrar = parseFloat(calculoMontoFinal(monto, tasaInteres));
 
     alert(`Tu prestamo de $${monto} fue aprobado en un plazo de ${cuotas} cuotas con una tasa de interes de ${tasaInteres}%. 
     El valor de tu cuota será de $${valorCuota}. Al finalizar el período se abonará un total de $${totalidadCobrar}.`)
