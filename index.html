@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Prestamos JOMARO</title>
+</head>
+<body>
+    <div class="container-fluid portada p-3 mt-1">
+        <h1 id="titulo"></h1>
+    </div>
+  
+    <div class="container-fluid fondoCuerpo">
+      <div class="container cuerpo mt-2">
+  
+        <h2 id="tituloTerciario" class=" pt-3 pb-3 d-flex justify-content-center"></h2>
+  
+        <form id="formulario" class="pt-3" >
+          <div class="row mb-3">
+            <label for="colFormLabel" class="col-sm-2 col-form-label "
+              ><h6>Nombre Completo:</h6></label
+            >
+            <div class="col-sm-10">
+              <input
+                type="nombre"
+                class="form-control "
+                id="input-nombre"
+                placeholder="Ingrese su nombre completo"
+                required
+              />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="colFormLabel" class="col-sm-2 col-form-label"
+              ><h6>Sueldo:</h6></label
+            >
+            <div class="col-sm-10">
+              <input
+                type="number"
+                class="form-control"
+                id="input-sueldo"
+                placeholder="Ingrese su sueldo"
+                required
+              />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="colFormLabel" class="col-sm-2 col-form-label"
+              ><h6>Edad:</h6></label
+            >
+            <div class="col-sm-10">
+              <input
+                type="number"
+                class="form-control"
+                id="input-edad"
+                placeholder="Ingrese su edad"
+                required
+              />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="colFormLabel" class="col-sm-2 col-form-label"
+              ><h6>Monto a solicitar:</h6></label
+            >
+            <div class="col-sm-10">
+              <input
+                type="number"
+                class="form-control"
+                id="input-monto"
+                placeholder="Monto a solicitar en pesos uruguayos"
+                required
+              />
+            </div>
+          </div>
+          <div class="row pb-3">
+            <label for="colFormLabel" class="col-sm-2 col-form-label"
+              ><h6>Cuotas:</h6></label
+            >
+            <div class="col-sm-10">
+              <input
+                type="number"
+                class="form-control"
+                id="input-cuotas"
+                placeholder="Ingrese el numero de cuotas deseadas"
+                required
+              />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="colFormLabel" class="col-sm-2 col-form-label"
+              ><h6>Email:</h6></label
+            >
+            <div class="col-sm-10">
+              <input
+                type="email"
+                class="form-control"
+                id="input-email"
+                placeholder="Ingrese su casilla de correo"
+                required
+              />
+            </div> 
+           </div>
+          <div class="col-auto pt-4 pb-3 d-flex justify-content-center">
+            <button id="boton" class="btn botonera btn-lg">Realizar solicitud</button>
+          </div>
+        </form>
+        <div >
+          <h2 id="tituloSecundario" class="d-flex pt-2 justify-content-center"></h2>
+        </div>
+
+
+        <div class="d-flex justify-content-center pb-3 ">
+            <img src="./dinero-financiacion-empresas.jpg" class="rounded w-75 pb-3" alt="">
+          </div>
+    
+          
+          
+          
+    
+          <div>
+            <ol id="informe-prestamos"></ol>
+          </div>
+
+
+
+
+
+    <script src="./js/bootstrap.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>

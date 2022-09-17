@@ -1,0 +1,38 @@
+.portada {
+    display: flex;
+    justify-content: center;
+    background-color: #260101;
+}
+
+.cuerpo {
+    background-color: #9c595f;
+    color: #402208;
+}
+
+#titulo {
+    color: #bf9788;
+}
+
+.fondoCuerpo {
+    background-color:#bf9788 ;
+}
+
+.botonera {
+    background-color: #bf9788;
+}
+.botonera:hover {
+    background-color: #733630;
+    color: white;
+}
+
+.colorTexto {
+    background-color: rgb(189, 140, 174);
+}
+
+.morado {
+    background-color: #b71806c2;
+}
+
+.purple {
+    background-color: #8f1540;
+}
