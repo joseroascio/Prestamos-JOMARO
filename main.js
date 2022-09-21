@@ -16,6 +16,7 @@ class Prestamo {
 
 // Aca siempre van a estar mis prestamos
 const prestamos = [];
+JSON.parse(localStorage.getItem("clienteSolicitantes"));
 
 const titulo = document.getElementById("titulo");
 titulo.innerHTML = "JOMARO - CASA DE PRESTAMOS";
@@ -111,6 +112,7 @@ const simularPrestamo = () => {
                           Monto: ${prestamoFiltrado.monto} 
                           Cuotas:${prestamoFiltrado.cuotas}`
     lista.append(li);
+    localStorage.setItem("clienteSolicitantes",JSON.stringify(prestamos));
     };
    
   }
