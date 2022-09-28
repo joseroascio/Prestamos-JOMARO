@@ -17,6 +17,7 @@ class Prestamo {
 // Aca siempre van a estar mis prestamos
 let prestamos = [];
 
+
 const titulo = document.getElementById("titulo");
 titulo.innerHTML = "JOMARO - CASA DE PRESTAMOS";
 
@@ -81,8 +82,21 @@ const simularPrestamo = () => {
     const tasaInteres = calcularInteres(monto, cuotas);
     const totalidadCobrar = parseFloat(calculoMontoFinal(monto, tasaInteres));
 
-    alert(`Tu prestamo de $${monto} fue aprobado en un plazo de ${cuotas} cuotas con una tasa de interes de ${tasaInteres}%. 
+    const mensajeFinal = (`Tu prestamo de $${monto} fue aprobado en un plazo de ${cuotas} cuotas con una tasa de interes de ${tasaInteres}%. 
     El valor de tu cuota será de $${valorCuota}. Al finalizar el período se abonará un total de $${totalidadCobrar}.`);
+    console.log(mensajeFinal);
+    
+
+    Swal.fire({
+      title: 'Solicitud aprobada',
+      text: 'Disfruta de tu prestamo JOMARO.',
+      imageUrl: './prestamo-aprobado.png',
+      imageWidth: 400,
+      imageHeight: 250,
+      position: "top-center",
+      icon: 'success',
+      imageAlt: 'Custom image',
+    })
 
     prestamos.push({
       nombreCompleto: usuario.nombreApellido,
@@ -91,7 +105,7 @@ const simularPrestamo = () => {
     });
 
     const lista = document.getElementById("informe-prestamos");
-    //el <ol id="informe-prestamos"> definido por html es lista en js
+    
 
     const prestamosEntregados = obtenerPrestamosEntregados();
 
@@ -110,7 +124,11 @@ const simularPrestamo = () => {
     localStorage.setItem("prestamosEntregados",JSON.stringify(prestamos)); //seteo en el local todos los prestamos
 
   } else {
-    alert("No cumple los requisitos para obtener un prestamo JOMARO");
+    Swal.fire({
+      icon: 'error',
+      title: 'Solicitud rechazada',
+      text: 'No cumples con los requisitos necesarios',
+    })
   }
 };
 
@@ -118,6 +136,7 @@ const simularPrestamo = () => {
 const obtenerPrestamosEntregados = () => {
   return JSON.parse(localStorage.getItem("prestamosEntregados"));
 };
+
 const prestamosPorMonto = (prestamosEntregados) => {
   return prestamosEntregados.filter((item) => item.monto > 60000);
 };
