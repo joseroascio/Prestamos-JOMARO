@@ -1,3 +1,16 @@
+// Aca siempre van a estar mis prestamos
+let prestamos = [];
+
+window.addEventListener('load', () => {
+  fetch("./data.json")
+  .then(response => response.json())
+  .then(data => {
+    prestamos = data
+  })
+}
+  
+);
+
 class Usuario {
   constructor(nombreApellido, edad, sueldo, mail) {
     this.nombreApellido = nombreApellido;
@@ -13,10 +26,6 @@ class Prestamo {
     this.cuotas = cuotas;
   }
 }
-
-// Aca siempre van a estar mis prestamos
-let prestamos = [];
-
 
 const titulo = document.getElementById("titulo");
 titulo.innerHTML = "JOMARO - CASA DE PRESTAMOS";
@@ -72,7 +81,7 @@ const simularPrestamo = () => {
   console.debug(usuario);
 
   const monto = parseInt(document.getElementById("input-monto").value);
-  const cuotas = document.getElementById("input-cuotas").value;
+  const cuotas = parseInt(document.getElementById("input-cuotas").value);
 
   const prestamo = new Prestamo(monto, cuotas);
 
@@ -95,9 +104,10 @@ const simularPrestamo = () => {
       imageHeight: 250,
       position: "top-center",
       icon: 'success',
-      imageAlt: 'Custom image',
+      imageAlt: 'Custom image'
     })
 
+   
     prestamos.push({
       nombreCompleto: usuario.nombreApellido,
       monto: prestamo.monto,
@@ -114,6 +124,7 @@ const simularPrestamo = () => {
       const prestamosFiltrados = prestamosPorMonto(prestamos);
       // voy a ver los prestamos que cumplen: item.monto >60000
       for (const prestamoFiltrado of prestamosFiltrados) {
+        
         const li = document.createElement("li");
         li.innerHTML = `Nombre: ${prestamoFiltrado.nombreCompleto} 
                         Monto: ${prestamoFiltrado.monto} 
@@ -121,7 +132,8 @@ const simularPrestamo = () => {
         lista.append(li);
       }
     }
-    localStorage.setItem("prestamosEntregados",JSON.stringify(prestamos)); //seteo en el local todos los prestamos
+    //seteo en el local todos los prestamos
+    localStorage.setItem("prestamosEntregados",JSON.stringify(prestamos)); 
 
   } else {
     Swal.fire({
@@ -148,3 +160,5 @@ let formulario = document.getElementById("formulario");
 formulario.addEventListener("submit", (e) => {
   e.preventDefault();
 });
+
+
