@@ -1,0 +1,20 @@
+
+   [
+    {
+      "nombreApellido": "Agustin Morelle",
+      "sueldo": 85000,
+      "edad": 26,
+      "monto": 115000,
+      "cuotas": 36,
+      "mail": "jamorelle2022@gmail.com"
+    },
+    {
+      "nombreApellido": "Maximiliano Roascio",
+      "sueldo": 60000,
+      "edad": 25,
+      "monto": 90000,
+      "cuotas": 30,
+      "mail": "maximaroascio2010@hotmail.com"
+    }
+  ]
+
